@@ -143,11 +143,10 @@ const HomeHero: FC = () => {
               </Box>
             </Box>
           </Grid>
-          <Grid item xs={12} md={4} sx={{ position: 'relative' }}>
-            <Box sx={{ lineHeight: 0 }}>
-              {<Image src="/images/avatars/merounded.png" width={250} height={320} alt="Hero img" />}
-            </Box>
-          </Grid>
+
+          <Box sx={{ lineHeight: 0, m: 'auto' }}>
+            {<Image src="/images/avatars/merounded.png" width={250} height={320} alt="me" />}
+          </Box>
         </Grid>
         {/* Experience */}
         <Box sx={{ boxShadow: 2, py: 2, px: 3, borderRadius: 4 }}>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import SendIcon from '@mui/icons-material/Send'
 import CloseIcon from '@mui/icons-material/Close'
 import { TextField, Button, Avatar, Box, Tooltip, CircularProgress, Stack, Typography, IconButton } from '@mui/material'
 const API_KEY = process.env.API_KEY
@@ -174,13 +175,25 @@ const InputBar: React.FC = () => {
             fullWidth
             label={sugerenciaActual}
             variant="outlined"
-            color="primary"
-            sx={{ flexGrow: 1, mr: 2 }}
-            // Agrega cualquier otra propiedad personalizada según tus necesidades
+            InputProps={{
+              endAdornment: (
+                <IconButton
+                  disabled={inputValue === ''}
+                  onClick={TurboOpenIA}
+                  sx={{
+                    backgroundColor: '#4caf50',
+                    color: 'white',
+                    '&:hover': {
+                      backgroundColor: '#45a049',
+                    },
+                  }}
+                >
+                  <SendIcon />
+                </IconButton>
+              ),
+            }}
+            sx={{ m: 0 }}
           />
-          <Button variant="contained" color="primary" onClick={TurboOpenIA}>
-            Send
-          </Button>
         </Box>
       </Box>
       <Box
